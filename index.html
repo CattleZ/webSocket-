@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<input type="text" placeholder="请输入你的内容" />
+<button>发送请求</button>
+<!-- 显示内容 -->
+<div style="width: 200px;height: 200px;border: 1px solid black">
+
+</div>
+<script type="text/javascript">
+      var inputx = document.querySelector('input')
+      var buttonx = document.querySelector('button')
+      var divx = document.querySelector('div')
+     // H5提供了websocket
+     // 参数一： websocket的服务地址 （这里使用的是测试地址）
+    var socket = new WebSocket('ws://121.40.165.18:8800')
+     //2. open 表示连接成功的时候触发
+    socket.addEventListener('open',function () {
+        divx.innerHTML = '连接服务成功了'
+    })
+    //3. 主动给webSocket 发送消息
+    buttonx.addEventListener('click',function () {
+        var value = inputx.value
+        socket.send("发送消息:"+value)
+    })
+    //4. 接收websocket服务的数据
+    socket.addEventListener('message',function (ev) {
+        divx.innerHTML = ev.data
+    })
+    // 5. 注册close事件，当连接断开的时候需要执行什么操作
+    socket.addEventListener('close',function (ev) {
+        alert("连接断开了")
+    })
+</script>
+</body>
+</html>
