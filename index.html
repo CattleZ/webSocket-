@@ -17,7 +17,7 @@
       var divx = document.querySelector('div')
      // H5提供了websocket
      // 参数一： websocket的服务地址 （这里使用的是测试地址）
-    var socket = new WebSocket('ws://localhost:8001')
+    var socket = new WebSocket('ws://localhost:3000')
      //2. open 表示连接成功的时候触发
     socket.addEventListener('open',function () {
         divx.innerHTML = '连接服务成功了'
@@ -26,10 +26,13 @@
     buttonx.addEventListener('click',function () {
         var value = inputx.value
         socket.send("发送消息:"+value)
+        inputx.innerHTML = ''
     })
     //4. 接收websocket服务的数据
     socket.addEventListener('message',function (ev) {
-        divx.innerHTML = ev.data
+        var dv = document.createElement('div')
+        dv.innerHTML = ev.data
+        divx.appendChild(dv)
     })
     // 5. 注册close事件，当连接断开的时候需要执行什么操作
     socket.addEventListener('close',function (ev) {
