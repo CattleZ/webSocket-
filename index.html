@@ -17,7 +17,7 @@
       var divx = document.querySelector('div')
      // H5提供了websocket
      // 参数一： websocket的服务地址 （这里使用的是测试地址）
-    var socket = new WebSocket('ws://121.40.165.18:8800')
+    var socket = new WebSocket('ws://localhost:8001')
      //2. open 表示连接成功的时候触发
     socket.addEventListener('open',function () {
         divx.innerHTML = '连接服务成功了'
