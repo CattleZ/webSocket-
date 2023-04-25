@@ -30,8 +30,18 @@
     })
     //4. 接收websocket服务的数据
     socket.addEventListener('message',function (ev) {
+
+        var date = JSON.parse(ev.data)
+
         var dv = document.createElement('div')
-        dv.innerHTML = ev.data
+        dv.innerHTML = date.msg +"------"+ date.time
+        if(date.type === 0){
+            dv.style.color = 'green'
+        }else if(date.type === 1){
+            dv.style.color = 'red'
+        }else{
+            dv.style.color = 'blue'
+        }
         divx.appendChild(dv)
     })
     // 5. 注册close事件，当连接断开的时候需要执行什么操作
