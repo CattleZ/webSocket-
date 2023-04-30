@@ -11,11 +11,10 @@ import org.springframework.web.servlet.ModelAndView;
  * @Date 2023/4/30 13:14
  **/
 @Controller
-public class TestController {
+public class IndexController {
 
-    @RequestMapping("/indexxx")
+    @RequestMapping("")
     public String index(){
-        System.out.println("xx");
         return "index";
     }
 }
