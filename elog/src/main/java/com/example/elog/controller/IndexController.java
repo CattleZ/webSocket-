@@ -1,9 +1,7 @@
 package com.example.elog.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 /**
  * @Author gorge
@@ -11,10 +9,11 @@ import org.springframework.web.servlet.ModelAndView;
  * @Date 2023/4/30 13:14
  **/
 @Controller
-public class IndexController {
+public class IndexController extends BaseController{
 
     @RequestMapping("")
     public String index(){
+        req.setAttribute("categoryId",0);
         return "index";
     }
 }

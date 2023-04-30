@@ -3,7 +3,6 @@ package com.example.elog.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 
 /**
  * @Author gorge
@@ -11,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
  * @Date 2023/4/30 15:16
  **/
 @Controller
-public class PostController {
+public class PostController extends BaseController{
 
     /**
      * 分类
@@ -20,6 +19,7 @@ public class PostController {
      */
     @GetMapping("/category/{id:\\d*}")
     public String category(@PathVariable(name="id") Long id){
+        req.setAttribute("categoryId",id);
         return "post/category";
     }
 
