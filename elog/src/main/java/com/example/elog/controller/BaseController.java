@@ -1,6 +1,8 @@
 package com.example.elog.controller;
 
 
+import com.example.elog.service.MPostService;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
@@ -16,4 +18,7 @@ public class BaseController {
      */
     @Resource
     HttpServletRequest req;
+
+    @Resource
+    MPostService mPostService;
 }
