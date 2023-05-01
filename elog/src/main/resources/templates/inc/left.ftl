@@ -172,23 +172,6 @@
                 </li>
             </#list>
         </ul>
-        <div style="text-align: center">
-            <div id ="laypage-main">
-            </div>
-            <script src="../res/layui/layui.js"></script>
-            <script>
-                layui.use('laypage',function (){
-                    console.log("nihao")
-                    var laypage = layui.laypage;
-                    // 执行一个page实例
-                    laypage.render({
-                        elem: 'laypage-main', // 这里是id，不用添加#号
-                        count: ${pageData.total}, // 数据总数
-                        curr: ${pageData.current},
-                        limit: ${pageData.size} //每一页显示的条数
-                    })
-                });
-            </script>
-        </div>
+        <@paging pageData></@paging>
     </div>
 </div>

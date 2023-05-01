@@ -13,10 +13,11 @@
     </head>
     <body>
     <#--使用freemark引入另外一个文件-->
+    <#include "./common.ftl">
     <#include "./header.ftl">
-    <#include "./footer.ftl">
 <#--    中间一些不通用的数据就会引入进来-->
     <#nested />
+    <#include "./footer.ftl">
     <script src="../res/layui/layui.js"></script>
     <script>
         layui.cache.page = '';
