@@ -1,6 +1,10 @@
 package com.example.elog.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.example.elog.Vo.MPostVo;
+import com.example.elog.entity.MPost;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -30,6 +34,10 @@ public class PostController extends BaseController{
      */
     @GetMapping("/detail/{id:\\d*}")
     public String detail(@PathVariable(name="id") Long id){
+        MPostVo postVo = mPostService.selectOnePost(new QueryWrapper<MPost>().eq("p.id",id));
+        Assert.notNull(postVo,"文章已经被删除");
+        req.setAttribute("categoryId",postVo.getCategoryId());
+        req.setAttribute("post",postVo);
         return "post/detail";
     }
 }

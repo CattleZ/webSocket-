@@ -3,9 +3,6 @@
     <CLASSES>
       <root url="jar://$USER_HOME$/java_jar/org/springframework/spring-expression/5.3.27/spring-expression-5.3.27.jar!/" />
     </CLASSES>
-    <JAVADOC>
-      <root url="jar://$USER_HOME$/java_jar/org/springframework/spring-expression/5.3.27/spring-expression-5.3.27-javadoc.jar!/" />
-    </JAVADOC>
     <SOURCES>
       <root url="jar://$USER_HOME$/java_jar/org/springframework/spring-expression/5.3.27/spring-expression-5.3.27-sources.jar!/" />
     </SOURCES>

@@ -34,11 +34,16 @@ public class MPostServiceImpl extends ServiceImpl<MPostMapper, MPost> implements
         QueryWrapper wrapper = new QueryWrapper<MPost>()
                 .eq(categoryId!=null,"category_id",categoryId)
                 .eq(userId != null,"user_id",userId)
-                .eq(level==0,"level",0)
+                .eq(level.equals(0),"level",0)
                 .gt(level>0,"level",0)
                 .orderByDesc(created!=null,"created")
                 ;
 
         return mPostMapper.selectPosts(page,wrapper);
+    }
+
+    @Override
+    public MPostVo selectOnePost(QueryWrapper<MPost> queryWrapper) {
+        return mPostMapper.selectOnePost(queryWrapper);
     }
 }

@@ -3,9 +3,6 @@
     <CLASSES>
       <root url="jar://$USER_HOME$/java_jar/net/minidev/json-smart/2.4.10/json-smart-2.4.10.jar!/" />
     </CLASSES>
-    <JAVADOC>
-      <root url="jar://$USER_HOME$/java_jar/net/minidev/json-smart/2.4.10/json-smart-2.4.10-javadoc.jar!/" />
-    </JAVADOC>
     <SOURCES>
       <root url="jar://$USER_HOME$/java_jar/net/minidev/json-smart/2.4.10/json-smart-2.4.10-sources.jar!/" />
     </SOURCES>

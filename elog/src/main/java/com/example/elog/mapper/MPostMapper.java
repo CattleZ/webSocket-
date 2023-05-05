@@ -29,4 +29,11 @@ public interface MPostMapper extends BaseMapper<MPost> {
      * @return
      */
     IPage<MPostVo> selectPosts(Page page, @Param(Constants.WRAPPER) QueryWrapper wrapper);
+
+    /**
+     * 查询博客详情内容
+     * @param wrapper
+     * @return
+     */
+    MPostVo selectOnePost(@Param(Constants.WRAPPER) QueryWrapper wrapper);
 }

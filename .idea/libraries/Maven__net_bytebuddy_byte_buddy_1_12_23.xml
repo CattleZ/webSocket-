@@ -3,9 +3,6 @@
     <CLASSES>
       <root url="jar://$USER_HOME$/java_jar/net/bytebuddy/byte-buddy/1.12.23/byte-buddy-1.12.23.jar!/" />
     </CLASSES>
-    <JAVADOC>
-      <root url="jar://$USER_HOME$/java_jar/net/bytebuddy/byte-buddy/1.12.23/byte-buddy-1.12.23-javadoc.jar!/" />
-    </JAVADOC>
     <SOURCES>
       <root url="jar://$USER_HOME$/java_jar/net/bytebuddy/byte-buddy/1.12.23/byte-buddy-1.12.23-sources.jar!/" />
     </SOURCES>
