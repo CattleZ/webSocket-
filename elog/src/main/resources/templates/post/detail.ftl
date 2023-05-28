@@ -39,76 +39,76 @@
             <i class="iconfont" title="人气">&#xe60b;</i> ${post.viewCount}
           </span>
                     </div>
-                    <div class="detail-about">
-                        <a class="fly-avatar" href="/user/${post.authorId}">
-                            <img src="${post.authorAvatar}" alt="${post.authorName}">
-                        </a>
-                        <div class="fly-detail-user">
-                            <a href="/user/${post.authorId}" class="fly-link">
-                                <cite>${post.authorName}</cite>
-                            </a>
-                            <span>${(post.created)?string('yyyy-MM-dd HH:mm:ss')}</span>
-                        </div>
-
-<#--                        <div class="detail-hits" id="LAY_jieAdmin" data-id="${post.id}">-->
-<#--                            <#if profile.id == post.userId><span class="layui-btn layui-btn-xs jie-admin" type="edit"><a href="/post/edit?id=${post.id}">编辑此贴</a></span></#if>-->
+<#--                    <div class="detail-about">-->
+<#--                        <a class="fly-avatar" href="/user/${post.authorId}">-->
+<#--                            <img src="${post.authorAvatar}" alt="${post.authorName}">-->
+<#--                        </a>-->
+<#--                        <div class="fly-detail-user">-->
+<#--                            <a href="/user/${post.authorId}" class="fly-link">-->
+<#--                                <cite>${post.authorName}</cite>-->
+<#--                            </a>-->
+<#--                            <span>${(post.created)?string('yyyy-MM-dd HH:mm:ss')}</span>-->
 <#--                        </div>-->
 
-                    </div>
+<#--&lt;#&ndash;                        <div class="detail-hits" id="LAY_jieAdmin" data-id="${post.id}">&ndash;&gt;-->
+<#--&lt;#&ndash;                            <#if profile.id == post.userId><span class="layui-btn layui-btn-xs jie-admin" type="edit"><a href="/post/edit?id=${post.id}">编辑此贴</a></span></#if>&ndash;&gt;-->
+<#--&lt;#&ndash;                        </div>&ndash;&gt;-->
+
+<#--                    </div>-->
                     <div class="detail-body photos">
                         ${post.content}
                     </div>
                 </div>
 
-<#--                <div class="fly-panel detail-box" id="flyReply">-->
-<#--                    <fieldset class="layui-elem-field layui-field-title" style="text-align: center;">-->
-<#--                        <legend>回帖</legend>-->
-<#--                    </fieldset>-->
+                <div class="fly-panel detail-box" id="flyReply">
+                    <fieldset class="layui-elem-field layui-field-title" style="text-align: center;">
+                        <legend>回帖</legend>
+                    </fieldset>
 
-<#--                    <ul class="jieda" id="jieda">-->
-<#--                        <#list pageData.records as comment>-->
-<#--                            <li data-id="${comment.id}" class="jieda-daan">-->
-<#--                                <a name="item-${comment.id}"></a>-->
-<#--                                <div class="detail-about detail-about-reply">-->
-<#--                                    <a class="fly-avatar" href="/user/${post.authorId}">-->
-<#--                                        <img src="${comment.authorAvatar}" alt="${comment.authorName}">-->
-<#--                                    </a>-->
-<#--                                    <div class="fly-detail-user">-->
-<#--                                        <a href="/user/${comment.authorId}" class="fly-link">-->
-<#--                                            <cite>${comment.authorName}</cite>-->
-<#--                                        </a>-->
+                    <ul class="jieda" id="jieda">
+                        <#list pageData.records as comment>
+                            <li data-id="${comment.id}" class="jieda-daan">
+                                <a name="item-${comment.id}"></a>
+                                <div class="detail-about detail-about-reply">
+                                    <a class="fly-avatar" href="/user/${post.authorId}">
+                                        <img src="${comment.authorAvatar}" alt="${comment.authorName}">
+                                    </a>
+                                    <div class="fly-detail-user">
+                                        <a href="/user/${comment.authorId}" class="fly-link">
+                                            <cite>${comment.authorName}</cite>
+                                        </a>
 
-<#--                                        <#if comment.user_id == post.user_id>-->
-<#--                                            <span>(楼主)</span>-->
-<#--                                        </#if>-->
-<#--                                    </div>-->
+                                        <#if comment.user_id == post.user_id>
+                                            <span>(楼主)</span>
+                                        </#if>
+                                    </div>
 
-<#--                                    <div class="detail-hits">-->
-<#--                                        <span>${timeAgo(comment.created)}</span>-->
-<#--                                    </div>-->
+                                    <div class="detail-hits">
+                                        <span>${comment.created}</span>
+                                    </div>
 
-<#--                                </div>-->
-<#--                                <div class="detail-body jieda-body photos">-->
-<#--                                    ${comment.content}-->
-<#--                                </div>-->
-<#--                                <div class="jieda-reply">-->
-<#--                          <span class="jieda-zan zanok" type="zan">-->
-<#--                            <i class="iconfont icon-zan"></i>-->
-<#--                            <em>${comment.voteUp}</em>-->
-<#--                          </span>-->
-<#--                                    <span type="reply">-->
-<#--                            <i class="iconfont icon-svgmoban53"></i>-->
-<#--                            回复-->
-<#--                          </span>-->
-<#--                                    <div class="jieda-admin">-->
-<#--                                        <span type="del">删除</span>-->
-<#--                                    </div>-->
-<#--                                </div>-->
-<#--                            </li>-->
-<#--                        </#list>-->
-<#--                    </ul>-->
+                                </div>
+                                <div class="detail-body jieda-body photos">
+                                    ${comment.content}
+                                </div>
+                                <div class="jieda-reply">
+                          <span class="jieda-zan zanok" type="zan">
+                            <i class="iconfont icon-zan"></i>
+                            <em>${comment.voteUp}</em>
+                          </span>
+                                    <span type="reply">
+                            <i class="iconfont icon-svgmoban53"></i>
+                            回复
+                          </span>
+                                    <div class="jieda-admin">
+                                        <span type="del">删除</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </#list>
+                    </ul>
 
-<#--                    &lt;#&ndash;                    <@paging pageData></@paging>&ndash;&gt;-->
+<#--                                        <@paging pageData></@paging>-->
 
 <#--                    <div class="layui-form layui-form-pane">-->
 <#--                        <form action="/post/reply/" method="post">-->
@@ -124,7 +124,7 @@
 <#--                            </div>-->
 <#--                        </form>-->
 <#--                    </div>-->
-<#--                </div>-->
+                </div>
             </div>
             <#include "../inc/right.ftl" />
         </div>

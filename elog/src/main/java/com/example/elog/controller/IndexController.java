@@ -17,11 +17,7 @@ public class IndexController extends BaseController{
 
     @RequestMapping("")
     public String index(){
-        //分页查询博客的基本信息
-        // 获取当前页面参数
-        int pn = ServletRequestUtils.getIntParameter(req,"pn",1);
-        int size = ServletRequestUtils.getIntParameter(req,"size",2);
-        Page page = new Page(pn,size);
+        Page page = getPage();
         // 分页参数 置顶 分类 用户 精选 排序
         IPage<MPostVo> results = mPostService.paging(page,null,null,null,null,"created");
         req.setAttribute("pageData",results);

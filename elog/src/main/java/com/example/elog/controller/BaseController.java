@@ -1,7 +1,10 @@
 package com.example.elog.controller;
 
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.example.elog.service.MCommentService;
 import com.example.elog.service.MPostService;
+import org.springframework.web.bind.ServletRequestUtils;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -21,4 +24,15 @@ public class BaseController {
 
     @Resource
     MPostService mPostService;
+
+    @Resource
+    MCommentService mCommentService;
+
+    public Page getPage(){
+        //分页查询博客的基本信息
+        // 获取当前页面参数
+        int pn = ServletRequestUtils.getIntParameter(req,"pn",1);
+        int size = ServletRequestUtils.getIntParameter(req,"size",2);
+        return new Page(pn,size);
+    }
 }

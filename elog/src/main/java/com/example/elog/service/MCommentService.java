@@ -1,5 +1,8 @@
 package com.example.elog.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.example.elog.Vo.CommentVo;
 import com.example.elog.entity.MComment;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -13,4 +16,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface MCommentService extends IService<MComment> {
 
+    IPage<CommentVo> paging(Page page, Long articalId, Long userId, String created);
 }

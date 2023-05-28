@@ -24,17 +24,16 @@
           </span>
                     </div>
 
-<#--                    <@posts categoryId=currentCategoryId pn=pn size=2>-->
+                    <@posts categoryId=currentCategoryId pn=pn size=2>
 
-<#--                        <ul class="fly-list">-->
-<#--                            <#list results.records as post>-->
-<#--                                <@plisting post></@plisting>-->
-<#--                            </#list>-->
-<#--                        </ul>-->
-
+                        <ul class="fly-list">
+                            <#list results.records as post>
+                                <@plisting post></@plisting>
+                            </#list>
+                        </ul>
 <#--                        <@paging results></@paging>-->
 
-<#--                    </@posts>-->
+                    </@posts>
 
 
                 </div>
